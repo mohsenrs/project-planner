@@ -1,0 +1,11 @@
+{
+    "include": [
+        "./src/assets/logo.png",
+        "./src/components/HelloWorld.vue",
+        "./src/router/index.js",
+        "./src/views/About.vue",
+        "./src/views/Home.vue",
+        "./src/App.vue",
+        "./src/main.js",
+    ]
+}
