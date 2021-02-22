@@ -19,6 +19,7 @@ export default {
   name: "Home",
   components: {
     SingleProject,
+    soosis,
   },
   data() {
     return {
@@ -41,7 +42,7 @@ export default {
       let p = this.projects.find((project) => {
         return project.id === id;
       });
-      p.complete = !p.complete
+      p.complete = !p.complete;
     },
   },
 };
