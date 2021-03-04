@@ -14,6 +14,7 @@
 
 <script>
 import SingleProject from "../components/SingleProject";
+import { projectFirestore } from "../firebase/cofig";
 
 export default {
   name: "Home",
@@ -26,10 +27,16 @@ export default {
     };
   },
   mounted() {
-    fetch("http://localhost:3000/projects")
-      .then((res) => res.json())
-      .then((data) => (this.projects = data))
-      .catch((err) => console.log(err.message));
+    // fetch("http://localhost:3000/projects")
+    //   .then((res) => res.json())
+    //   .then((data) => (this.projects = data))
+    //   .catch((err) => console.log(err.message));
+    // const load = async () => {
+    //   const res = await projectFirestore.collection("projects").get();
+    //   this.projects = res.docs.map((doc) => {
+    //     return { ...doc.data(), id: doc.id };
+    //   });
+    // };
   },
   methods: {
     handleDelete(id) {
@@ -41,7 +48,7 @@ export default {
       let p = this.projects.find((project) => {
         return project.id === id;
       });
-      p.complete = !p.complete
+      p.complete = !p.complete;
     },
   },
 };
