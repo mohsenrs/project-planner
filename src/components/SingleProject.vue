@@ -3,7 +3,9 @@
     <div class="actions">
       <h3 @click="showDetails = !showDetails">{{ project.title }}</h3>
       <div class="icons">
-        <span class="material-icons">edit</span>
+        <router-link :to="{ name: 'EditProject', params: { id: project.id } }">
+          <span class="material-icons">edit</span>
+        </router-link>
         <span @click="deleteProject" class="material-icons">delete</span>
         <span @click="toggleComplete" class="material-icons tick">done</span>
       </div>
@@ -60,6 +62,7 @@ export default {
 }
 .material-icons {
   cursor: pointer;
+  color: gray;
 }
 .material-icons:hover {
   color: darkgray;
@@ -68,9 +71,13 @@ export default {
   border-left: 4px solid #00e961;
 }
 .project.complete .tick {
-  color:  #00e961;
+  color: #00e961;
 }
 h3 {
   cursor: pointer;
+}
+a{
+    color: gray;
+
 }
 </style>
